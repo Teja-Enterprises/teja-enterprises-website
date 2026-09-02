@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" role="img" aria-labelledby="title desc">
+<title id="title">Teja Enterprises LLP logo</title>
+<desc id="desc">A blue water drop with a green leaf beside the words Teja Enterprises LLP</desc>
+<defs>
+  <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a74d1"/><stop offset="1" stop-color="#064b9b"/></linearGradient>
+</defs>
+<path d="M55 10C55 10 18 52 18 76c0 20 16 35 37 35s37-15 37-35C92 52 55 10 55 10z" fill="url(#b)"/>
+<path d="M60 67c18-28 42-29 57-20-5 19-22 34-47 31-5-1-8-4-10-11z" fill="#2b8a46"/>
+<text x="112" y="58" font-family="Arial,Helvetica,sans-serif" font-size="43" font-weight="800" letter-spacing="3" fill="#064b9b">TEJA</text>
+<text x="114" y="88" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" letter-spacing="2.2" fill="#12304f">ENTERPRISES LLP</text>
+</svg>
