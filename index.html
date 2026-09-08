@@ -72,7 +72,179 @@
 <section class="section future" id="future"><div class="container future-grid"><div class="plants">🌱<span>🌿</span><i>🍃</i></div><div><span class="eyebrow green">COMING IN THE FUTURE</span><h2>Growing toward a greener future.</h2><p>As Teja Enterprises grows, we plan to build an organic nursery with fresh vegetable plants, fruit plants, flowering plants and other useful nursery plants.</p><div class="future-list"><span>✓ Vegetable plants</span><span>✓ Fruit plants</span><span>✓ Fresh nursery plants</span></div><span class="coming">Stay tuned for updates</span></div></div></section>
 
 <section class="section contact" id="contact"><div class="container contact-grid"><div><span class="eyebrow">CONTACT TEJA ENTERPRISES</span><h2>Need water for your store or next event?</h2><p>Send us your required quantity, location and date. We will get back to you with availability and order details.</p><div class="contact-items"><a href="tel:+918125619347"><b>☎</b><span>Call Us<strong>+91 81256 19347</strong></span></a><a href="mailto:rudra@teja-enterprises.com"><b>✉</b><span>Email<strong>rudra@teja-enterprises.com</strong></span></a><div><b>📍</b><span>Service Area<strong>Eluru District, Andhra Pradesh</strong></span></div></div></div>
-<form id="enquiry"><h3>Quick Enquiry</h3><label>Name<input id="name" required placeholder="Your name"></label><label>Phone<input id="phone" required placeholder="Your phone number"></label><label>Requirement<select id="req"><option>Water bottle supply</option><option>Store supply</option><option>Catering / event supply</option><option>Wedding / function supply</option><option>Other</option></select></label><label>Details<textarea id="details" rows="4" placeholder="Quantity, location, date..."></textarea></label><button class="btn primary" type="submit">Send on WhatsApp</button><small>No online payment. Your enquiry opens in WhatsApp.</small></form></div></section>
+<form
+  id="waterOrderForm"
+  action="https://script.google.com/macros/s/AKfycbw5JJXfcjBH_mgGhVRszo2hTxNE_k4uGNcmA1OxeC8Bptf-92ivGHDv5ymjq5a8jQwN/exec"
+  method="POST"
+  target="orderSubmitFrame"
+>
+
+  <h3>Request Water Supply</h3>
+
+  <p class="form-intro">
+    Tell us what you need and we will contact you with availability and delivery details.
+  </p>
+
+  <label>
+    Customer Name
+    <input
+      type="text"
+      name="name"
+      required
+      placeholder="Enter your full name"
+    >
+  </label>
+
+  <label>
+    Phone Number
+    <input
+      type="tel"
+      name="phone"
+      required
+      placeholder="Enter your phone number"
+    >
+  </label>
+
+  <label>
+    Email Address
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="Enter your email address"
+    >
+  </label>
+
+  <label>
+    Customer Address
+    <textarea
+      name="address"
+      rows="3"
+      required
+      placeholder="Enter your address"
+    ></textarea>
+  </label>
+
+  <label>
+    Occasion
+    <select name="occasion" required>
+      <option value="">Select occasion</option>
+      <option>Wedding</option>
+      <option>Birthday</option>
+      <option>Catering</option>
+      <option>Corporate Event</option>
+      <option>Function</option>
+      <option>Other</option>
+    </select>
+  </label>
+
+  <label>
+    Occasion Date
+    <input
+      type="date"
+      name="occasionDate"
+      required
+    >
+  </label>
+
+  <label>
+    Delivery Address
+    <textarea
+      name="deliveryAddress"
+      rows="3"
+      required
+      placeholder="Where should we deliver the water?"
+    ></textarea>
+  </label>
+
+  <div class="quantity-title">
+    <strong>Water Bottle Quantities</strong>
+    <span>Enter 0 if you do not need a size.</span>
+  </div>
+
+  <div class="quantity-grid">
+
+    <label>
+      250 ml
+      <input
+        type="number"
+        name="qty250"
+        min="0"
+        step="1"
+        value="0"
+      >
+    </label>
+
+    <label>
+      500 ml
+      <input
+        type="number"
+        name="qty500"
+        min="0"
+        step="1"
+        value="0"
+      >
+    </label>
+
+    <label>
+      1 L
+      <input
+        type="number"
+        name="qty1L"
+        min="0"
+        step="1"
+        value="0"
+      >
+    </label>
+
+    <label>
+      2 L
+      <input
+        type="number"
+        name="qty2L"
+        min="0"
+        step="1"
+        value="0"
+      >
+    </label>
+
+  </div>
+
+  <label>
+    Additional Notes
+    <textarea
+      name="notes"
+      rows="4"
+      placeholder="Any special requirements, preferred delivery time, etc."
+    ></textarea>
+  </label>
+
+  <label class="consent">
+    <input
+      type="checkbox"
+      required
+    >
+    <span>
+      I agree to Teja Enterprises using the information provided to contact me about this water supply request.
+    </span>
+  </label>
+
+  <button class="btn primary" type="submit">
+    Submit Water Supply Request
+  </button>
+
+  <small>
+    No online payment is required. We will contact you to confirm availability and order details.
+  </small>
+
+</form>
+
+<iframe
+  name="orderSubmitFrame"
+  id="orderSubmitFrame"
+  style="display:none;"
+  title="Order submission"
+></iframe></div></section>
 </main>
 
 <footer><div class="container footer-grid"><div class="footer-brand"><div class="logo"><img src="assets/teja-enterprises-logo.svg" alt="Teja Enterprises LLP"></div><p>Packaged drinking water supply for stores, caterers, events and functions across Eluru District.</p></div><div><h4>Quick Links</h4><a href="#about">About Us</a><a href="#products">Products</a><a href="#services">Services</a><a href="#future">Future Plans</a></div><div><h4>Contact</h4><a href="tel:+918125619347">+91 81256 19347</a><a href="mailto:rudra@teja-enterprises.com">rudra@teja-enterprises.com</a><span>Eluru District, Andhra Pradesh</span></div><div><h4>Order</h4><a class="footer-wa" target="_blank" rel="noopener" href="https://wa.me/918125619347?text=Hello%20Teja%20Enterprises,%20I%20would%20like%20to%20place%20an%20order.">WhatsApp Us</a></div></div><div class="copyright">© <span id="year"></span> Teja Enterprises LLP. All rights reserved. <span>•</span> <a href="mailto:rudra@teja-enterprises.com">rudra@teja-enterprises.com</a></div></footer>
