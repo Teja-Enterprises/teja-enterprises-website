@@ -1,10 +1,52 @@
-document.getElementById('year').textContent=new Date().getFullYear();
-const menu=document.querySelector('.menu'),nav=document.querySelector('nav');
-menu.addEventListener('click',()=>{nav.classList.toggle('open');menu.setAttribute('aria-expanded',nav.classList.contains('open'))});
-document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-document.getElementById('enquiry').addEventListener('submit',e=>{e.preventDefault();const n=document.getElementById('name').value.trim(),p=document.getElementById('phone').value.trim(),r=document.getElementById('req').value,d=document.getElementById('details').value.trim();const msg=`Hello Teja Enterprises,\n\nName: ${n}\nPhone: ${p}\nRequirement: ${r}\nDetails: ${d||'Not provided'}`;window.open('https://wa.me/918125619347?text='+encodeURIComponent(msg),'_blank')});
 /* ================================
-   WATER SUPPLY ORDER CONFIRMATION
+   TEJA ENTERPRISES WEBSITE SCRIPT
+   ================================ */
+
+
+/* ================================
+   COPYRIGHT YEAR
+   ================================ */
+
+const yearElement = document.getElementById('year');
+
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
+
+
+/* ================================
+   MOBILE NAVIGATION
+   ================================ */
+
+const menu = document.querySelector('.menu');
+const nav = document.querySelector('nav');
+
+if (menu && nav) {
+
+  menu.addEventListener('click', () => {
+
+    nav.classList.toggle('open');
+
+    menu.setAttribute(
+      'aria-expanded',
+      nav.classList.contains('open')
+    );
+
+  });
+
+  document.querySelectorAll('nav a').forEach(a => {
+
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+    });
+
+  });
+
+}
+
+
+/* ================================
+   WATER SUPPLY ORDER FORM
    ================================ */
 
 const waterForm = document.getElementById('waterOrderForm');
@@ -12,7 +54,12 @@ const orderSubmitFrame = document.getElementById('orderSubmitFrame');
 
 let waterOrderSubmitted = false;
 
+
 if (waterForm && orderSubmitFrame) {
+
+  /*
+   * Customer clicks Submit.
+   */
 
   waterForm.addEventListener('submit', () => {
 
@@ -23,11 +70,20 @@ if (waterForm && orderSubmitFrame) {
     );
 
     if (submitButton) {
+
       submitButton.disabled = true;
-      submitButton.textContent = 'Submitting Request...';
+
+      submitButton.textContent =
+        'Submitting Request...';
+
     }
 
   });
+
+
+  /*
+   * Apps Script responds through the hidden iframe.
+   */
 
   orderSubmitFrame.addEventListener('load', () => {
 
@@ -37,7 +93,17 @@ if (waterForm && orderSubmitFrame) {
 
     waterOrderSubmitted = false;
 
-    const successMessage = document.createElement('div');
+
+    /*
+     * Create success message.
+     */
+
+    const successMessage =
+      document.createElement('div');
+
+    successMessage.id =
+      'waterOrderSuccess';
+
 
     successMessage.innerHTML = `
       <div style="
@@ -48,10 +114,13 @@ if (waterForm && orderSubmitFrame) {
         text-align:center;
         margin-bottom:20px;
       ">
+
         <div style="
           font-size:32px;
           margin-bottom:8px;
-        ">✓</div>
+        ">
+          ✓
+        </div>
 
         <h3 style="
           margin:0 0 10px;
@@ -70,15 +139,31 @@ if (waterForm && orderSubmitFrame) {
           We will contact you shortly to confirm availability,
           pricing and delivery details.
         </p>
+
       </div>
     `;
+
+
+    /*
+     * Show confirmation above the form.
+     */
 
     waterForm.parentNode.insertBefore(
       successMessage,
       waterForm
     );
 
+
+    /*
+     * Hide the completed form.
+     */
+
     waterForm.style.display = 'none';
+
+
+    /*
+     * Scroll customer to confirmation.
+     */
 
     successMessage.scrollIntoView({
       behavior: 'smooth',
