@@ -112,5 +112,14 @@
 <footer class="footer"><div class="container footer-grid"><div><img src="assets/teja-enterprises-logo.svg" alt="Teja Enterprises LLP" class="footer-logo"><p>Packaged drinking water supply for stores, caterers, events and functions across Eluru District.</p></div><div><h4>Quick Links</h4><a href="#about">About Us</a><a href="#products">Products</a><a href="#services">Services</a><a href="#future">Future Plans</a></div><div><h4>Contact</h4><a href="tel:+918125619347">+91 81256 19347</a><a href="mailto:rudra@teja-enterprises.com">rudra@teja-enterprises.com</a><span>Eluru District, Andhra Pradesh</span></div><div><h4>Order</h4><a class="footer-wa" target="_blank" rel="noopener" href="https://wa.me/918125619347?text=Hello%20Teja%20Enterprises,%20I%20would%20like%20to%20order%20water.">WhatsApp Us</a><a href="#contact">Request Water Supply</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> Teja Enterprises LLP. All rights reserved.</span><span>Pure Water. Brighter Tomorrows.</span></div></footer>
 <a class="floating-wa" target="_blank" rel="noopener" href="https://wa.me/918125619347?text=Hello%20Teja%20Enterprises,%20I%20would%20like%20to%20enquire%20about%20water%20supply.">WhatsApp</a>
 <script src="script.js"></script>
+  <script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/service-worker.js")
+        .then(() => console.log("Teja Enterprises service worker registered"))
+        .catch(error => console.error("Service worker registration failed:", error));
+    });
+  }
+</script>
 </body>
 </html>
